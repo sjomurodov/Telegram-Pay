@@ -8,7 +8,7 @@
 
 //sozlash
 include 'Telegram.php';
-include 'app/conf.php';
+include 'config.php';
 
 $telegram = new Telegram($bot_token);
 $efede3 = $telegram->getData();
