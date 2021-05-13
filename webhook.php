@@ -64,8 +64,7 @@ if ($pay_id) {
 
 // to'lov omadli bo'lganda bu haqida bot orqali userga xabar berish
 if ($ms_currency) {
-    $keyb = $telegram->buildKeyBoard($home, $onetime = false, $resize = true, $resize = true);
-    $content = ['chat_id' => $chat_id, 'reply_markup' => $keyb, 'text' => "Siz {$ms_total_amount} SUM to'ladingiz", 'parse_mode' => 'markdown'];
+    $content = ['chat_id' => $chat_id, 'text' => "Siz {$ms_total_amount} SUM to'ladingiz", 'parse_mode' => 'markdown'];
     $telegram->sendMessage($content);
 }
 
@@ -86,7 +85,13 @@ if ($text == "/start") {
     $pul = json_encode([['label' => "E-POLIS narxi", 'amount' => "120000"],['label' => "Yetkazib berish", 'amount' => "50000"]]);
 
     $content = ['chat_id' => $chat_id, 'title' => 'Xalq-sug\'urta Telegram Pay Test', 'description' => '1yillik E-POLIS uchun to\'lov qilish', 'payload' => 'tg_pay', 'provider_token' => $provider_token , 'start_parameter' => 'pay', 'currency' => 'UZS', 'photo_url' => "https://cdn.paycom.uz/merchants/70e14aea76f8957dafc6f6a5004c8df1c51fc211.png", 'photo_width' => 80, 'photo_height' => 80, 'prices' => $pul, 'parse_mode' => 'markdown'];
-    $telegram->sendInvoice($content);
+    $xabar = $telegram->sendInvoice($content);
+    $xabar_msg = $xabar["result"]["message_id"];
+
+    if ($xabar_msg) {
+        $content = ['chat_id' => $chat_id, 'text' => "Siz @BotFather dan kirib Payment sozlasini sozladingiz aniqmi?", 'parse_mode' => 'markdown'];
+        $telegram->sendMessage($content);
+    }
 }
 
 $telegram->respondSuccess();

@@ -4,7 +4,7 @@
 Telegramdan chiqmasdan turib mahsulot va xizmatlarga to'lov qilishni osoni usuli.
 Buni uchun sizda **Click.uz** yoki **Payme.uz** bilan shartnoma qilishingiz kerak bo'ladi.
 
-* config.php fayliga kerak o'zgaruvchilarni kiritasiz:
+* config.php fayliga kerak bo'ladigan o'zgaruvchilarni kiritasiz:
     1.  $bot_token - ga @BotFather dan olingan botni tokenini
     2.  $provider_token - ga esa @CLICKTerminal yoki @CLICKTerminal olingan tokenni kiritasiz.
 
