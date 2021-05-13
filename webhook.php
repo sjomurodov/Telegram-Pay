@@ -89,7 +89,7 @@ if ($text == "/start") {
     $xabar_msg = $xabar["result"]["message_id"];
 
     if ($xabar_msg) {
-        $content = ['chat_id' => $chat_id, 'text' => "Siz @BotFather dan kirib Payment sozlasini sozladingiz aniqmi?", 'parse_mode' => 'markdown'];
+        $content = ['chat_id' => $chat_id, 'text' => "Siz @BotFather dan kirib Payment sozlamasini sozlaganingiz aniqmi?", 'parse_mode' => 'markdown'];
         $telegram->sendMessage($content);
     }
 }
