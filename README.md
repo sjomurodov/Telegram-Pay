@@ -12,6 +12,10 @@ Buni uchun sizda **Click.uz** yoki **Payme.uz** bilan shartnoma qilishingiz kera
 * Shunchaki TEST qilib ko'rmoqchi bo'lsangiz:
 1. @CLICKtest dan TEST token olishingiz mumkin.
 
+
 🔗 To'lov haqida batafsil: https://core.telegram.org/bots/payments
 
 💻 Dasturchi: https://t.me/ads_buy
+
+# Telegram api
+Ushbu bot [TelegramBotPHP](https://github.com/sjomurodov/TelegramBotPHP) kutubxonasi orqali yozildi.
