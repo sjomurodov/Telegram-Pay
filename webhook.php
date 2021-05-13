@@ -88,7 +88,7 @@ if ($text == "/start") {
     $xabar = $telegram->sendInvoice($content);
     $xabar_msg = $xabar["result"]["message_id"];
 
-    if ($xabar_msg) {
+    if (!$xabar_msg) {
         $content = ['chat_id' => $chat_id, 'text' => "Siz @BotFather dan kirib Payment sozlamasini sozlaganingiz aniqmi?", 'parse_mode' => 'markdown'];
         $telegram->sendMessage($content);
     }
