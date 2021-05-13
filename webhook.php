@@ -72,7 +72,7 @@ if ($ms_currency) {
 if ($text == "/pay") {
     $data = 12*100;
     
-    $pul = json_encode(array(array('label' => "E-POLIS narxi", 'amount' => "{$data[summa]}")));
+    $pul = json_encode([['label' => "E-POLIS narxi", 'amount' => "{$data[summa]}"]]);
 
     $content = ['chat_id' => $chat_id, 'title' => 'Xalq-sug\'urta Telegram Pay Test', 'description' => '1yillik E-POLIS uchun to\'lov qilish', 'payload' => 'tg_pay', 'provider_token' => $provider_token , 'start_parameter' => 'pay', 'currency' => 'UZS', 'photo_url' => "https://cdn.paycom.uz/merchants/70e14aea76f8957dafc6f6a5004c8df1c51fc211.png", 'photo_width' => 80, 'photo_height' => 80, 'prices' => $pul, 'parse_mode' => 'markdown'];
     $telegram->sendInvoice($content);
